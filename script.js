@@ -7,10 +7,12 @@ let FleischfresserArray = []
 
 function setup() {
   createCanvas(500, 500);
-  frameRate(10)
+  frameRate(50)
   noStroke()
   for (let i = 0; i < 1; i++) {
-   
+    grasArray.push(new gras(22,23))
+    grasArray.push(new gras(23,22))
+    grasArray.push(new gras(22,21))
     grasArray.push(new gras(23,21))
     grasArray.push(new gras(25,22))
     grasArray.push(new gras(25,23))
@@ -22,8 +24,12 @@ function setup() {
     grasArray.push(new gras(24,25))
   }
   for (let i = 0; i < 1; i++) {
-    RasenDestroyerArray.push(new RasenDestroyer(22,22))
+    RasenDestroyerArray.push(new RasenDestroyer(21,21))
+    RasenDestroyerArray.push(new RasenDestroyer(21,21))
   }
+  /*for (let i = 0; i < 1; i++) {
+    FleischfresserArray.push(new FleischFresser(25,26))
+  } */
   //for (let i = 0; i < 1; i++) {
   //  FleischfresserArray.push(new RasenDestroyer(22,22))
   //}
@@ -34,7 +40,7 @@ function draw() {
   console.log(grasArray.length+RasenDestroyerArray.length);
   //console.log(RasenDestroyerArray)
   //console.log(grasArray)
-  if (z < 300) {
+  if (z < 1000) {
     for (let i = 0; i < grasArray.length; i++) {
       grasArray[i].spielzug()
     }

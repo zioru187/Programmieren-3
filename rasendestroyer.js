@@ -2,7 +2,7 @@
 class RasenDestroyer {
     zeile;
     spalte;
-    energie = 20;
+    energie = 10;
     constructor(z,s) {
         this.zeile = z;
         this.spalte = s;
@@ -12,9 +12,9 @@ class RasenDestroyer {
         matrix[this.zeile][this.spalte] = 2;
     };
     spielzug() {
-        if (this.energie > 25) {
+        if (this.energie > 15) {
             this.platziereNeuenRasenDestroyer();
-            this.energie = 25;
+            this.energie = 10;
         } else if (this.energie > 0 ) {
             this.machSchritt();
         } else {

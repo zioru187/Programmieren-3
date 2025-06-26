@@ -10,7 +10,7 @@ class gras {
 
 
     spielzug() {
-        if (this.energie > 7) {
+        if (this.energie > 15) {
             this.platziereNeuesGras();
             this.energie = 0;
         } else {
