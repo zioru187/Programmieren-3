@@ -10,18 +10,16 @@ function setup() {
   frameRate(50)
   noStroke()
   for (let i = 0; i < 1; i++) {
-    grasArray.push(new gras(22,23))
-    grasArray.push(new gras(23,22))
-    grasArray.push(new gras(22,21))
-    grasArray.push(new gras(23,21))
-    grasArray.push(new gras(25,22))
-    grasArray.push(new gras(25,23))
-    grasArray.push(new gras(25,24))
-    grasArray.push(new gras(25,25))
-    grasArray.push(new gras(21,25))
-    grasArray.push(new gras(22,25))
-    grasArray.push(new gras(23,25))
-    grasArray.push(new gras(24,25))
+    grasArray.push(new gras(i,i))
+    grasArray.push(new gras(i+1,i))
+    grasArray.push(new gras(i+2,i))
+    grasArray.push(new gras(i+3,i))
+    grasArray.push(new gras(i+4,i))
+    grasArray.push(new gras(i+5,i))
+    grasArray.push(new gras(i+i,i))
+    grasArray.push(new gras(i,i+i))
+    grasArray.push(new gras(i+i,i+i))
+    grasArray.push(new gras(i+i+i,i))
   }
   for (let i = 0; i < 1; i++) {
     RasenDestroyerArray.push(new RasenDestroyer(21,21))
@@ -30,9 +28,6 @@ function setup() {
   /*for (let i = 0; i < 1; i++) {
     FleischfresserArray.push(new FleischFresser(25,26))
   } */
-  //for (let i = 0; i < 1; i++) {
-  //  FleischfresserArray.push(new RasenDestroyer(22,22))
-  //}
 }
 
 let z = 0
