@@ -1,4 +1,6 @@
-class gras {
+import { randomNumber, inMatrix, scanFeld } from '../utils.js';
+
+export default class gras {
     zeile;
     spalte;
     energie = 0;

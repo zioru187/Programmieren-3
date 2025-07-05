@@ -1,4 +1,4 @@
-function erstelleMatrix(spalten, zeilen) {
+export function erstelleMatrix(spalten, zeilen) {
     let matrix = []
     for (let i = 0; i < zeilen; i++) {
         let zeile = []
@@ -10,11 +10,11 @@ function erstelleMatrix(spalten, zeilen) {
     return matrix;
 }
 
-
-function randomNumber(min, max) {
+export function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
-function inMatrix(koordinatenPaar) {
+
+export function inMatrix(koordinatenPaar) {
     // der überprüft, ob ein Koordinatenpaar [zeile,spalte]
     // in der Matrix ist?
     let zeile = koordinatenPaar[0];
@@ -28,7 +28,8 @@ function inMatrix(koordinatenPaar) {
         return true;
     }
 }
-function istGras(koordinatenPaar) {
+
+export function istGras(koordinatenPaar) {
     let zeile = koordinatenPaar[0];
     let spalte = koordinatenPaar[1];
 
@@ -41,7 +42,7 @@ function istGras(koordinatenPaar) {
     }
 }
 
-function zeichneMatrix() {
+export function zeichneMatrix() {
     for (let zeile = 0; zeile < matrix.length; zeile++) {
         for (let spalte = 0; spalte < matrix.length; spalte++) {
             if (matrix[zeile][spalte] === 2) {
@@ -58,7 +59,8 @@ function zeichneMatrix() {
     }
 }
 
-function spielzug() {
+/*
+export function spielzug() {
     if (this.energie > 4) {
         this.platziereNeuesGras();
         this.energie = 0;
@@ -66,8 +68,9 @@ function spielzug() {
         this.energie++;
     }
 };
+*/
 
-function scanFeld(koordinatenPaar, farbcode) {
+export function scanFeld(koordinatenPaar, farbcode) {
     let zeile = koordinatenPaar[0];
     let spalte = koordinatenPaar[1];
 
@@ -76,8 +79,8 @@ function scanFeld(koordinatenPaar, farbcode) {
         return true
     } else return false;
 }
-liste = []
-function löschObjekt(liste,zeile, spalte) {
+
+export function loeschObjekt(liste,zeile, spalte) {
 
     let index;
     for (let i = 0; i < liste.length; i++) {

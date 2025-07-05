@@ -1,27 +1,29 @@
-class FleischFresser {
+import { randomNumber, inMatrix, scanFeld, loeschObjekt } from '../utils.js';
+
+class rasendestroyer {
     zeile;
     spalte;
-    energie = 20;
+    energie = 10;
     constructor(z,s) {
         this.zeile = z;
         this.spalte = s;
         this.platziereSelbstInMatrix();
     };
     platziereSelbstInMatrix() {
-        matrix[this.zeile][this.spalte] = 3;
+        matrix[this.zeile][this.spalte] = 2;
     };
     spielzug() {
-        if (this.energie > 20) {
-            this.platziereNeuenFleischFresser();
-            this.energie = 20;
+        if (this.energie > 15) {
+            this.platziereNeuenRasenDestroyer();
+            this.energie = 10;
         } else if (this.energie > 0 ) {
             this.machSchritt();
         } else {
             matrix[this.zeile][this.spalte] = 0;
-            löschObjekt(FleischfresserArray,this.zeile,this.spalte);
+            löschObjekt(RasenDestroyerArray,this.zeile,this.spalte);
         }
     };
-    platziereNeuenFleischFresser() {
+    platziereNeuenRasenDestroyer() {
         // scan deine umgebung, und schau ob du um dich herum 
         // ein freies Feld findest.
         // wenn du ein freies feld findest, dann platziere auf diesem Feld
@@ -54,7 +56,7 @@ class FleischFresser {
                     let zeile = ausgewähltesFeld[0];
                     let spalte = ausgewähltesFeld[1];
 
-                    FleischfresserArray.push(new FleischFresser(zeile, spalte))
+                    RasenDestroyerArray.push(new RasenDestroyer(zeile, spalte))
                     return;
                 }
             }
@@ -80,10 +82,10 @@ class FleischFresser {
             if (inMatrix(ausgewähltesFeld)) {
                 if (scanFeld(ausgewähltesFeld,1)) {
                     matrix[this.zeile][this.spalte] = 0;
-                    löschObjekt(RasenDestroyerArray,ausgewähltesFeld[0],ausgewähltesFeld[1])
+                    löschObjekt(grasArray,ausgewähltesFeld[0],ausgewähltesFeld[1])
                     this.zeile = ausgewähltesFeld[0];
                     this.spalte = ausgewähltesFeld[1];
-                    matrix[this.zeile][this.spalte] = 3;
+                    matrix[this.zeile][this.spalte] = 2;
                     this.energie++;
                     return;
                 }
